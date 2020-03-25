@@ -163,7 +163,73 @@ img.add_border {
 <p>4.在cd2020打git submodule add <a href="https://github.com/mdecourse/cmsimde.git取得">https://github.com/mdecourse/cmsimde.git</a> 取得</p>
 <p>cmsimde的資料夾</p>
 <p>5.在cmsimde/up_dir複製所有資料貼到cd2020底下</p>
-<p>6.回到cd2020並add/commit/push打自己的帳號密碼就完成創建網站了</p><br />About << <a href='About.html'>Previous</a> <a href='分組作業.html'>Next</a> >> 分組作業</div>
+<p>6.回到cd2020並add/commit/push打自己的帳號密碼就完成創建網站了</p>
+<p>week2</p>
+<p>更新可攜系統</p>
+<p>1.在隨身碟創建data的資料夾</p>
+<p>2.創建py382資料夾，下載python3.8.2，安裝時將pip的選項取消</p>
+<p>3.創建msys64資料夾，下載msys2</p>
+<p>4.下載<span>PortableGit到data底下</span></p>
+<p><span>5.創wscite432資料夾，下載SciTE</span></p>
+<p><span>6.打開SciTE，輸入</span></p>
+<pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false">@echo off
+set Disk=y
+subst %Disk%: "data"
+ 
+%Disk%:
+ 
+set HomePath=%Disk%:\home
+set HomeDrive=%Disk%:\home
+set Home=%Disk%:\home
+set USERPROFILE=%Disk%:\home
+ 
+REM 將系統 Python 程式的 io 設為 utf-8
+set PYTHONIOENCODING="utf-8"
+ 
+#REM for putty
+#Set GIT_HOME=%CDisk%:\portablegit\bin\
+#Set GIT_SSH=%Disk%:\putty\plink.exe
+ 
+set PYTHONPATH=%Disk%:\py382\DLLs;%Disk%:\py382\Lib;%Disk%:\py382\Lib\site-packages;
+set PYTHONHOME=%Disk%:\py382
+ 
+set path_python=%Disk%:\py382;%Disk%:\py382\Scripts;
+set path_msys2=%Disk%:\msys64\mingw64\bin;
+set path_git=%Disk%:\portablegit\bin;
+set path_tcc=%Disk%:\tcc;
+ 
+path=%Disk%:;%path_python%;%path_msys2%;%path_git%;%path_tcc%;
+ 
+start /MIN cmd.exe
+start /MIN cmd.exe
+start /MIN cmd.exe
+start /MIN cmd.exe
+ 
+start /MIN %Disk%:\wscite432\wscite\SciTE.exe
+start /MIN %Disk%:\wscite432\wscite\SciTE.exe
+ 
+Exit</pre>
+<p>另存新檔到隨身碟下，名稱打start.bat</p>
+<pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false">@echo off
+set Disk=y
+path=%PATH%;
+ 
+taskkill /IM python.exe /F
+taskkill /IM pythonw.exe /F
+taskkill /IM scite.exe /F
+ 
+REM 終止虛擬硬碟與目錄的對應
+subst %Disk%: /D
+REM 關閉 cmd 指令視窗
+taskkill /IM cmd.exe /F
+ 
+EXIT</pre>
+<p><span>另存新檔到隨身碟下，名稱打stop.bat，將wscite432資料夾複製一個到y槽</span><br/><br/></p>
+<p><span>7.到<a href="https://bootstrap.pypa.io/get-pip.py">網站</a>底下將檔案另存新檔到data底下</span></p>
+<p><span>8.打開小黑窗，輸入下載模組的指令</span></p>
+<pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false">python get-pip.py</pre>
+<pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false">pip install flask bs4 lxml pelican markdown flask_cors leo</pre>
+<p>這樣就完成可攜系統的更新了</p><br />About << <a href='About.html'>Previous</a> <a href='分組作業.html'>Next</a> >> 分組作業</div>
         
     <!-- footer -->
       <div class="container">
