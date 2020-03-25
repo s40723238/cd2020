@@ -9,7 +9,18 @@
 <p>動態內容編輯完成後, 以 generate_pages 轉為靜態內容, 以 git add commit 及 push 將內容推到遠端.</p>
 <p>4. 之後若要以 git clone 取下包含 submodule 的所有內容, 執行:</p>
 <p>git clone --recurse-submodules <a href="https://github.com/mdecourse/newcms.git">https://github.com/mdecourse/newcms.git</a></p>
-<h1>分組作業</h1>
+<p>W1</p>
+<p></p>
+<h1>Week1~9</h1>
+<p>week1</p>
+<p>創建倉儲</p>
+<p>1.在自己的guthub上新增倉儲</p>
+<p>2.將自己倉儲設定底下的github page將sourse改成master branch</p>
+<p>3.git clone自己的倉儲</p>
+<p>4.在cd2020打git submodule add <a href="https://github.com/mdecourse/cmsimde.git取得">https://github.com/mdecourse/cmsimde.git</a> 取得</p>
+<p>cmsimde的資料夾</p>
+<p>5.在cmsimde/up_dir複製所有資料貼到cd2020底下</p>
+<p>6.回到cd2020並add/commit/push打自己的帳號密碼就完成創建網站了</p><h1>分組作業</h1>
 <p>what do you need to know from <a href="http://www.coppeliarobotics.com/helpFiles/index.html" rel="nofollow">http://www.coppeliarobotics.com/helpFiles/index.html</a> <span>to implement a four-wheeled robot?</span></p>
 <p><a href="https://www.coppeliarobotics.com/helpFiles/index.html">泡泡龍跟線走</a></p>
 <p>首先開啟教程一的<span>BubbleRob</span>檔案，下圖是接下來的仿真場景。</p>
@@ -25,7 +36,7 @@
 <p>一旦對路徑線條滿意後，雙擊路徑圖案，將Show orientation of points，Show path line和Show current position on path的打勾取消。然後按下Show path shaping dialog，將Path shaping enabled打勾，將type轉到horizontal segment，再將Scaling factor調整為4，最後將顏色調整為黑色，最後還須對路徑作一重要調整，現在路徑的z位置與地板的z位置重合，者樣會使我們有時看到地板，有時看到路徑，為避免此現象，只需將路徑上移0.5即可。</p>
 <p>最後一步是調整BubbleRob的控制器，使其也將遵循黑色路徑。 打開附加到bubbleRob的子腳本，並將其替換為以下代碼：</p>
 <p>------------------------------</p>
-<pre class="lightRedBox">function speedChange_callback(ui,id,newVal)
+<pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false">function speedChange_callback(ui,id,newVal)
     speed=minMaxSpeed[1]+(minMaxSpeed[2]-minMaxSpeed[1])*newVal/100
 end
 
@@ -92,7 +103,9 @@ end
 
 function sysCall_cleanup()
 	simUI.destroy(ui)
-end<br/><br/>------------------------------<br/><br/>現在可以輕鬆地調整視覺感應器的線，選擇一個，按右鍵[Add --&gt; Floating view]然後<br/><br/>在新添加的Floating view跟視覺感應器選起來右鍵[View --&gt; Associate view with selected vision sensor]<br/><br/>最後刪除再教程一的輔助項目，刪除圖像處理視覺傳感器(vision sensor)，該浮動視圖表示障礙物的清除。 通過距<br/>離對話框也刪除距離計算對象。</pre><h1>Develop</h1>
+end</pre>
+<pre class="lightRedBox"><br/><br/><br/>------------------------------<br/><br/>現在可以輕鬆地調整視覺感應器的線，選擇一個，按右鍵[Add --&gt; Floating view]然後<br/><br/>在新添加的Floating view跟視覺感應器選起來右鍵[View --&gt; Associate view with selected vision sensor]<br/><br/>最後刪除再教程一的輔助項目，刪除圖像處理視覺傳感器(vision sensor)，該浮動視圖表示障礙物的清除。 通過距<br/>離對話框也刪除距離計算對象。</pre>
+<h1>Develop</h1>
 <p><a href="https://github.com/mdecourse/cmsimde">https://github.com/mdecourse/cmsimde</a> 的開發, 可以在一個目錄中放入 cmsimde, 然後將 up_dir 中的內容放到與 cmsimde 目錄同位階的地方, 使用 command 進入 cmsimde 目錄, 執行 python wsgi.py, 就可以啟動, 以瀏覽器 https://localhost:9443 就可以連接, 以 admin 作為管理者密碼, 就可以登入維護內容.</p>
 <p>cmsimde 的開發採用 Leo Editor, 開啟 cmsimde 目錄中的 cmsimde.leo 就可以進行程式修改, 結束後, 若要保留網際內容, 只要將 cmsimde 外部的內容倒回 up_dir 目錄中即可後續對 cmsimde 遠端倉儲進行改版.</p>
 <p>init.py 位於  up_dir 目錄, 可以設定 site_title 與 uwsgi 等變數.</p>
