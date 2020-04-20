@@ -1,172 +1,164 @@
-<h1>First</h1>
-<h1>Week1~9</h1>
-<p>week1</p>
-<p>創建倉儲</p>
-<p>1.在自己的guthub上新增倉儲</p>
-<p>2.將自己倉儲設定底下的github page將sourse改成master branch</p>
-<p>3.git clone自己的倉儲</p>
-<p>4.在cd2020打git submodule add <a href="https://github.com/mdecourse/cmsimde.git取得">https://github.com/mdecourse/cmsimde.git</a> 取得</p>
-<p>cmsimde的資料夾</p>
-<p>5.在cmsimde/up_dir複製所有資料貼到cd2020底下</p>
-<p>6.回到cd2020並add/commit/push打自己的帳號密碼就完成創建網站了</p>
-<p>week2</p>
-<p>更新可攜系統</p>
-<p>1.在隨身碟創建data的資料夾</p>
-<p>2.創建py382資料夾，下載python3.8.2，安裝時將pip的選項取消</p>
-<p>3.創建msys64資料夾，下載msys2</p>
-<p>4.下載<span>PortableGit到data底下</span></p>
-<p><span>5.創wscite432資料夾，下載SciTE</span></p>
-<p><span>6.打開SciTE，輸入</span></p>
-<pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false">@echo off
-set Disk=y
-subst %Disk%: "data"
- 
-%Disk%:
- 
-set HomePath=%Disk%:\home
-set HomeDrive=%Disk%:\home
-set Home=%Disk%:\home
-set USERPROFILE=%Disk%:\home
- 
-REM 將系統 Python 程式的 io 設為 utf-8
-set PYTHONIOENCODING="utf-8"
- 
-#REM for putty
-#Set GIT_HOME=%CDisk%:\portablegit\bin\
-#Set GIT_SSH=%Disk%:\putty\plink.exe
- 
-set PYTHONPATH=%Disk%:\py382\DLLs;%Disk%:\py382\Lib;%Disk%:\py382\Lib\site-packages;
-set PYTHONHOME=%Disk%:\py382
- 
-set path_python=%Disk%:\py382;%Disk%:\py382\Scripts;
-set path_msys2=%Disk%:\msys64\mingw64\bin;
-set path_git=%Disk%:\portablegit\bin;
-set path_tcc=%Disk%:\tcc;
- 
-path=%Disk%:;%path_python%;%path_msys2%;%path_git%;%path_tcc%;
- 
-start /MIN cmd.exe
-start /MIN cmd.exe
-start /MIN cmd.exe
-start /MIN cmd.exe
- 
-start /MIN %Disk%:\wscite432\wscite\SciTE.exe
-start /MIN %Disk%:\wscite432\wscite\SciTE.exe
- 
-Exit</pre>
-<p>另存新檔到隨身碟下，名稱打start.bat</p>
-<pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false">@echo off
-set Disk=y
-path=%PATH%;
- 
-taskkill /IM python.exe /F
-taskkill /IM pythonw.exe /F
-taskkill /IM scite.exe /F
- 
-REM 終止虛擬硬碟與目錄的對應
-subst %Disk%: /D
-REM 關閉 cmd 指令視窗
-taskkill /IM cmd.exe /F
- 
-EXIT</pre>
-<p><span>另存新檔到隨身碟下，名稱打stop.bat，將wscite432資料夾複製一個到y槽</span><br/><br/></p>
-<p><span>7.到<a href="https://bootstrap.pypa.io/get-pip.py">網站</a>底下將檔案另存新檔到data底下</span></p>
-<p><span>8.打開小黑窗，輸入下載模組的指令</span></p>
-<pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false">python get-pip.py</pre>
-<pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false">pip install flask bs4 lxml pelican markdown flask_cors leo</pre>
-<p>這樣就完成可攜系統的更新了</p>
-<h1>分組作業</h1>
-<h2>Assignment1</h2>
-<p>what do you need to know from <a href="http://www.coppeliarobotics.com/helpFiles/index.html" rel="nofollow">http://www.coppeliarobotics.com/helpFiles/index.html</a> <span>to implement a four-wheeled robot?</span></p>
-<p><a href="https://www.coppeliarobotics.com/helpFiles/index.html">泡泡龍跟線走</a></p>
-<p><a href="https://github.com/s40723238/cd2020/blob/master/downloads/%E5%88%86%E7%B5%84%E4%BB%BB%E5%8B%991.pdf">pdf檔</a></p>
-<p>首先開啟教程一的<span>BubbleRob</span>檔案，下圖是接下來的仿真場景。</p>
-<p><img alt="" height="335" src="/images/圖1.png" width="517"/></p>
-<p>首先創建三個視覺傳感器的第一個，並拖至泡泡龍本體的下方，選擇[Menu bar --&gt; Add --&gt; Vision sensor --&gt; Orthographic type]，並雙擊對話框將對話框內嵾數修改如下:</p>
-<p><img alt="" height="615" src="/images/圖2.png" width="396"/></p>
-<p>視覺傳感器需面對地面，選擇它，在orientation dialog/orientation tab將數值設定為[180;0;0]。</p>
-<p><img alt="" height="44" src="/images/圖4.png" width="44"/>(path edit mode)將視覺傳感器複製並貼上兩次，將名稱改成leftSensor，middleSensor和rightSensor，並將其都拖到泡泡龍本體下。</p>
-<p>打開position dialog/position tab,將<span>left sensor設[0.2;0.042;0.018]，</span>middle sensor設[0.2;0;0.018]，right sensor設[0.2;-0.042;0.018]。</p>
-<p>現在修改環境，，移去<span>BubbleRob</span>前面的幾個圓柱體，並按[Menu bar --&gt; Add --&gt; Path --&gt; Circle type]在地上加入線，有兩種方法使線形狀改變線路徑</p>
-<p>1.點線，crtl加一節點並拖動。</p>
-<p>2.點選path edit modle  即可調整</p>
-<p>一旦對路徑線條滿意後，雙擊路徑圖案，將Show orientation of points，Show path line和Show current position on path的打勾取消。然後按下Show path shaping dialog，將Path shaping enabled打勾，將type轉到horizontal segment，再將Scaling factor調整為4，最後將顏色調整為黑色，最後還須對路徑作一重要調整，現在路徑的z位置與地板的z位置重合，者樣會使我們有時看到地板，有時看到路徑，為避免此現象，只需將路徑上移0.5即可。</p>
-<p>最後一步是調整BubbleRob的控制器，使其也將遵循黑色路徑。 打開附加到bubbleRob的子腳本，並將其替換為以下代碼：</p>
-<p>------------------------------</p>
-<pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false">function speedChange_callback(ui,id,newVal)
-    speed=minMaxSpeed[1]+(minMaxSpeed[2]-minMaxSpeed[1])*newVal/100
-end
+<!DOCTYPE html><html>
+        <head>
+        <title>s40723238</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500,700,900" rel="stylesheet">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/fonts/icomoon/style.css">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/css/bootstrap.min.css">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/css/magnific-popup.css">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/css/jquery-ui.css">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/css/owl.carousel.min.css">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/css/owl.theme.default.min.css">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/css/bootstrap-datepicker.css">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/fonts/flaticon/font/flaticon.css">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/css/aos.css">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/css/style.css">
+        <link rel="shortcut icon" href="./../cmsimde/static/favicons.png">
+        
+        <style type='text/css'>
+            .site-section {
+            background-color: #FFFF;
+            padding: 40px 40px;
+            }
+            body > div > div.dropdown.open {
+                display: block;
+            }
+        </style>
+    
+        <!-- <script src="./../cmsimde/static/jquery.js"></script> -->
+        <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> -->
+        <script src="../cmsimde/static/chimper/js/jquery-3.3.1.min.js"></script>
+        <link rel="stylesheet" href="./../cmsimde/static/tipuesearch/css/normalize.min.css">
+        <script src="./../cmsimde/static/tipuesearch/tipuesearch_set.js"></script>
+        <script src="tipuesearch_content.js"></script>
+        <link rel="stylesheet" href="./../cmsimde/static/tipuesearch/css/tipuesearch.css">
+        <script src="./../cmsimde/static/tipuesearch/tipuesearch.js"></script>
+        <script>
+            /* original tipuesearch
+            $(document).ready(function() {
+                 $('#tipue_search_input').tipuesearch();
+            });
+            */
+            // customed doSearch
+            function doSearch() {
+                $('#tipue_search_input').tipuesearch({
+                    newWindow: true, 
+                    minimumLength: 2,
+                    wholeWords: false, // for search 中文
+                });
+            }
+            $(document).ready(doSearch);
+        </script>
+        
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shCore.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushJScript.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushJava.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushPython.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushSql.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushHaxe.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushXml.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushPhp.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushLua.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushCpp.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushCss.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushCSharp.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushDart.js"></script>
+<link type="text/css" rel="stylesheet" href="./../cmsimde/static/syntaxhighlighter/css/shCoreDefault.css"/>
+<script type="text/javascript">SyntaxHighlighter.all();</script>
 
-function sysCall_init()
-    -- This is executed exactly once, the first time this script is executed
-    bubbleRobBase=sim.getObjectAssociatedWithScript(sim.handle_self)
-    leftMotor=sim.getObjectHandle("leftMotor")
-    rightMotor=sim.getObjectHandle("rightMotor")
-    noseSensor=sim.getObjectHandle("sensingNose")
-    minMaxSpeed={50*math.pi/180,300*math.pi/180}
-    backUntilTime=-1 -- Tells whether bubbleRob is in forward or backward mode
-    floorSensorHandles={-1,-1,-1}
-    floorSensorHandles[1]=sim.getObjectHandle("leftSensor")
-    floorSensorHandles[2]=sim.getObjectHandle("middleSensor")
-    floorSensorHandles[3]=sim.getObjectHandle("rightSensor")
-    -- Create the custom UI:
-        xml = '&lt;ui title="'..sim.getObjectName(bubbleRobBase)..' speed" closeable="false" resizeable="false" activate="false"&gt;'..[[
-        &lt;hslider minimum="0" maximum="100" onchange="speedChange_callback" id="1"/&gt;
-        &lt;label text="" style="* {margin-left: 300px;}"/&gt;
-        &lt;/ui&gt;
-        ]]
-    ui=simUI.reate(xml)
-    speed=(minMaxSpeed[1]+minMaxSpeed[2])*0.5
-    simUI.setSliderValue(ui,1,100*(speed-minMaxSpeed[1])/(minMaxSpeed[2]-minMaxSpeed[1]))
-end
+<!-- 啟用 LaTeX equations 編輯 -->
+<script src="https://scrum-3.github.io/web/math/MathJax.js?config=TeX-MML-AM_CHTML" type="text/javascript"></script>
+<script type="text/javascript">
+init_mathjax = function() {
+    if (window.MathJax) {
+        // MathJax loaded
+        MathJax.Hub.Config({
+            tex2jax: {
+                inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+                displayMath: [ ['$$','$$'], ["\\[","\\]"] ]
+            },
+            displayAlign: 'left', // Change this to 'center' to center equations.
+            "HTML-CSS": {
+                styles: {'.MathJax_Display': {"margin": 0}}
+            }
+        });
+        MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
+    }
+}
+init_mathjax();
+</script>
 
-function sysCall_actuation()
-    result=sim.readProximitySensor(noseSensor)
-    if (result&gt;0) then backUntilTime=sim.getSimulationTime()+4 end
+<!-- 暫時不用
+<script src="./../cmsimde/static/fengari-web.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/Cango-13v08-min.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/CangoAxes-4v01-min.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/gearUtils-05.js"></script>
+-->
+<!-- for Brython 暫時不用
+<script src="https://scrum-3.github.io/web/brython/brython.js"></script>
+<script src="https://scrum-3.github.io/web/brython/brython_stdlib.js"></script>
+-->
+<style>
+img.add_border {
+    border: 3px solid blue;
+}
+</style>
 
-    -- read the line detection sensors:
-    sensorReading={false,false,false}
-    for i=1,3,1 do
-        result,data=sim.readVisionSensor(floorSensorHandles[i])
-        if (result&gt;=0) then
-            sensorReading[i]=(data[11]&lt;0.3) -- data[11] is the average of intensity of the image
-        end
-        print(sensorReading[i])
-    end
+</head>
+<body>
+<div class='container'><nav>
+        
+    <div class="site-wrap">
 
-    -- compute left and right velocities to follow the detected line:
-    rightV=speed
-    leftV=speed
-    if sensorReading[1] then
-        leftV=0.03*speed
-    end
-    if sensorReading[3] then
-        rightV=0.03*speed
-    end
-    if sensorReading[1] and sensorReading[3] then
-        backUntilTime=sim.getSimulationTime()+2
-    end
+    <div class="site-mobile-menu">
+      <div class="site-mobile-menu-header">
+        <div class="site-mobile-menu-close mt-3">
+          <span class="icon-close2 js-menu-toggle"></span>
+        </div>
+      </div>
+      <div class="site-mobile-menu-body"></div>
+    </div>
+    
+            <header class="site-navbar py-4 bg-white" role="banner">
+              <div class="container-fluid">
+                <div class="row align-items-center">
+                <h1>s40723238 協同產品設計實習</h1>
+                <div class="pl-4">
+                    <form>
+                    <input type="text" placeholder="Search" name="q" id="tipue_search_input" pattern=".{2,}" title="At least 2 characters" required>
+                    </form>
+                </div>
+                  <!-- <div class="col-11 col-xl-2">
+                    <h1 class="mb-0 site-logo"><a href="index.html" class="text-black h2 mb-0">s40723238 協同產品設計實習</a></h1> 
+                  </div>
+                  -->
+                  <div class="col-12 col-md-10 d-none d-xl-block">
+                    <nav class="site-navigation position-relative text-right" role="navigation">
+    <ul class='site-menu js-clone-nav mr-auto d-none d-lg-block'>
+                        <li class="active has-children"><a href="index.html">Home</a>
+                        <ul class="dropdown">
+                            <li><a href="sitemap.html">Site Map</a></li>
+                            <li><a href="./../reveal/index.html">reveal</a></li>
+                            <li><a href="./../blog/index.html">blog</a></li>
+                        </ul>
+                      </li>
+                     <li><a href='Week1~9.html'>Week1~9</a><li class='has-children'><a href='分組作業.html'>分組作業</a><ul class='dropdown'><li><a href='Assignment1.html'>Assignment1</a><li><a href='Assignment2.html'>Assignment2</a></li>
+                      </ul>
+                </nav>
+              </div>
+              <div class="d-inline-block d-xl-none ml-md-0 mr-auto py-3" style="position: relative; top: 3px;"><a href="#" class="site-menu-toggle js-menu-toggle text-black"><span class="icon-menu h3"></span></a></div>
+              </div>
 
-    if (backUntilTime&lt;sim.getSimulationTime()) then
-        -- When in forward mode, we simply move forward at the desired speed
-        sim.setJointTargetVelocity(leftMotor,leftV)
-        sim.setJointTargetVelocity(rightMotor,rightV)
-    else
-        -- When in backward mode, we simply backup in a curve at reduced speed
-        sim.setJointTargetVelocity(leftMotor,-speed/2)
-        sim.setJointTargetVelocity(rightMotor,-speed/8)
-    end
-end
-
-function sysCall_cleanup()
-	simUI.destroy(ui)
-end</pre>
-<pre class="lightRedBox"><br/><br/><br/>------------------------------<br/><br/>現在可以輕鬆地調整視覺感應器的線，選擇一個，按右鍵[Add --&gt; Floating view]然後<br/><br/>在新添加的Floating view跟視覺感應器選起來右鍵[View --&gt; Associate view with selected vision sensor]<br/><br/>最後刪除再教程一的輔助項目，刪除圖像處理視覺傳感器(vision sensor)，該浮動視圖表示障礙物的清除。 通過距<br/>離對話框也刪除距離計算對象。</pre>
-<h2>Assignment2</h2>
+            </div>
+          </div>
+          
+        </header>
+    <div id="tipue_search_content">Assignment1 << <a href='Assignment1.html'>Previous</a> <br /><h1>Assignment2</h1>
 <p>topic0 p18~p24</p>
 <p>以下各節介紹了每種類型的設計過程的詳細特徵以及相關的上下文。</p>
 <p>由工業設計師主導概念設計流程</p>
-<p><img caption="false" height="341" src="/images/第一張.png" width="590"/></p>
+<p><img caption="false" height="341" src="./../images/第一張.png" width="590"/></p>
 <p>第一階段<span>(Concept Design-I)</span>：工業設計師獨立開發產品的概念，而不受其他部門的干擾。</p>
 <p>他們主要關注與美學外觀和用戶體驗有關的方面。 他們很少考慮內部零件，這給了他們很多自由。 他們為外部和高質量渲染圖像生成<span>3D CAD</span>數據以測試該概念。 最終確定外觀形式後，他們會製作一個“設計模型”（一個無功能的原型）來驗證該概念。</p>
 <p><span> </span></p>
@@ -186,7 +178,7 @@ end</pre>
 <p>考慮到相關的理論，即創造力是在以解決方案為導向的方法（<span>Wynn</span>＆<span>Clarkson</span>，<span>2005</span>）對問題進行徹底分析之前發生的，例如“主要生成器”（<span>Darke</span>，<span>1979</span>）和猜想分析模型（<span>Hillier</span>）。 ，<span>Musgrove</span>和<span>O'Sullivan</span>，<span>1972</span>年）以及<span>Lawson</span>（<span>2006</span>年）和<span>March</span>（<span>1984</span>年）的其他相關發現和論點，這將是公司賦予工業設計者自由和自主權以產生創造性解決方案概念的最佳策略。不受外界干擾。實際上，類型<span>1</span>在兩種情況下使用：一種是在形狀和功能上開發新概念產品，包括開發新產品類別（如在公司<span>A</span>和<span>E</span>中），另一種是盡快推出現有產品的新模型（如在公司<span>C</span>中）。當有大量參考設計時，後一種情況似乎是可能的，因此，工業設計師可以在交貨時間短時決定產品尺寸和外部元素而無需任何產品規格。</p>
 <p><span>2.2</span>類型<span>2</span>：由工業設計師領導的組合內外流程</p>
 <p>公司使用此過程來開發新型產品或修改現有產品。 在任何一種情況下，與類型<span>1</span>不同，產品計劃團隊都將啟動該過程。 我們可以分四個階段來解釋類型<span>2</span>，如下圖所示。</p>
-<p><img alt="" height="341" src="/images/第二張.png" width="597"/></p>
+<p><img alt="" height="341" src="./../images/第二張.png" width="597"/></p>
 <p>第一階段（<span>Product Planning</span>）：產品計劃團隊創建產品計劃文件以啟動產品開發。 它設置了目標市場，目標價格和產品規格。 在開發現有產品的修改版本時，它會根據現有產品（包括競爭對手的產品）做出決定。 在開發新產品時，工程設計師會幫助他們做出決定。 此階段的結果是一個產品計劃文檔。</p>
 <p><span> </span></p>
 <p>第二階段（<span>(Concept Design-I):</span>）：收到產品計劃部門的產品計劃文件後，工業設計師將決定產品的外觀和相關內部。 他們收集符合產品尺寸和規格的待開發產品所需的功能項目，並從對用戶或設計趨勢的研究中得出形式概念。 然後，他們安排內部零件以決定外觀形式，同時避免內部零件與預期的外部形式之間發生任何衝突。 因此，它們在外形設計和內部零件的佈置之間來回移動。 在此階段，工業設計師和工程設計師之間幾乎沒有互動。 對於最後的事件，設計評估將使用無功能的設計模型進行，因此，此階段的結果是有關產品外觀和初始內部佈局的<span>3D CAD</span>數據以及設計模型。</p>
@@ -197,7 +189,7 @@ end</pre>
 <p>類型<span>2</span>的顯著特徵是工業設計師積極參與佈置內部功能組件，同時在第二階段確定外觀形狀。偏重工程設計端。</p>
 <p><span> </span></p>
 <p><span>2.3</span>類型<span>3</span>：工程設計師主導的內部優先流程</p>
-<p><img alt="" height="333" src="/images/第三張.png" width="590"/></p>
+<p><img alt="" height="333" src="./../images/第三張.png" width="590"/></p>
 <p><span>Type 3</span>與<span>Type 1</span>和<span>Type 2</span>有兩點不同：它們僅用於重新設計現有產品，而工程設計師的活動要先於工業設計師進行。 它要求工程設計師扮演更重要的角色，同時減少工業設計師的角色。 我們解釋它們的特徵如下：</p>
 <p><span> </span></p>
 <p>第一階段（<span>Product Planning</span>）：如下圖所示，產品計劃團隊首先根據年度產品開發路線圖啟動產品開發項目。 至此，他們在路線圖中確實具有產品的功能概念。 產品規劃專家根據市場上現有的產品確定目標市場，目標價格，產品尺寸和材料成本。 工程設計師經常通過分析競爭對手產品的技術部分並估算材料成本來幫助他們制定產品規格。 此階段的結果是產品計劃文件，其中包括產品規格。</p>
@@ -207,11 +199,53 @@ end</pre>
 <p></p>
 <p><span>2.4</span>第<span>4</span>類：工業設計師跟工程設計師協同過程第<span>4</span>類不是官方提議，而是各個設計師在早期階段所做的努力。 在許多情況下，參與開發陣容模型的工程設計師往往會拒絕工業設計提出的新穎設計概念。</p>
 <p>為了實現這些概念，工業設計師與自由職業者進行合作。因此，此過程可以繼續處理被拒絕的新穎設計概念。 此外，工業設計師和工程設計人員也進行了協同努力。 與傳統的分離方法不同，它們以集成方式處理設計概念，同時考慮了許多設計變量。 此過程的詳細階段如下）：</p>
-<p><img alt="" height="341" src="/images/第四張.png" width="602"/></p>
+<p><img alt="" height="341" src="./../images/第四張.png" width="602"/></p>
 <p>第一階段（概念產出）：如上圖所示，工業設計師獨立地構思新設計。 他們大都是根據儘管有創新性但仍未進行項目的設計思想來構建它。</p>
 <p>第二階段（概念設計）：此階段始於工業設計師尋找可以與他們合作的工程設計師。 當工程設計師同意加入工業設計師以實施設計概念時，他們將在整個階段中緊密合作。 工程設計師為工業設計師提供了最先進的技術，以增強設計理念。內部佈局的第一級是根據要開發的外部形狀開發的。 該階段的結果是有關外觀和內部佈局的<span>3D CAD</span>數據。</p>
 <p>第三階段（規劃產品）：產品計劃團隊通過設計評估會議來決定設計的商業化。 然後，產品計劃團隊定義設計的目標市場。 從這個階段開始，負責開發陣容模型的工程設計人員就參與其中。</p>
 <p>第四階段（細節設計，測試跟生產<span>/</span>追蹤）：該階段的過程與類型<span>1</span>、<span>2</span>和<span>3</span>的過程沒有太大不同。</p>
 <p>現有的產品開發環境使工程設計人員趨於保守。消費電子領域的大多數開發項目都是緊迫的。公司通常會在計劃中設定產品發布日。因此，設計人員將按照時間軸執行所有任務和事件。根據訪談數據，參與此類項目的工程設計師傾向於拒絕工業設計師提出的新穎設計概念，因為他們認為他們無法確保其概念的工作能夠在選定的時間內通過性能和可靠性測試 。測試失敗將直接影響公司的產品開發路線圖以及工程設計師評估時的年度績效。</p>
 <p>這似乎使他們保守地選擇和評估設計概念。因此，對於直接參與按時間順序進入市場的項目的設計師來說，此過程幾乎不可用。相反，例如，從時間表到市場相對寬鬆的工程師設計人員，那些參與為未來產品開發先進技術的人員，將對新穎的設計理念更加開放。此外，更重要的是，似乎更願意與其他專家合作進行設計的設計師傾向於執行此過程。</p>
-<p>對於<span>D</span>公司，採用這種工藝的新產品在<span>Type 4</span>方面取得了巨大的市場成功。 但是，在我們的採訪中沒有報告更多將這一過程積極應用於後續項目的案例。 儘管如此，有趣的是<span>D</span>公司還是從先進技術開發團隊派遣了幾名工程設計師到工業設計團隊的相鄰辦公室。 這啟用了協同處理案例。 高層管理人員故意讓他們動手，以使他們立即為工業設計師提供必要的技術支持，以防止工業設計師提出不切實際的設計概念。 這似乎激發了雙方更加親密，從而營造了合作的氣氛。 這將增加新興的集成設計流程的可能性。</p>
+<p>對於<span>D</span>公司，採用這種工藝的新產品在<span>Type 4</span>方面取得了巨大的市場成功。 但是，在我們的採訪中沒有報告更多將這一過程積極應用於後續項目的案例。 儘管如此，有趣的是<span>D</span>公司還是從先進技術開發團隊派遣了幾名工程設計師到工業設計團隊的相鄰辦公室。 這啟用了協同處理案例。 高層管理人員故意讓他們動手，以使他們立即為工業設計師提供必要的技術支持，以防止工業設計師提出不切實際的設計概念。 這似乎激發了雙方更加親密，從而營造了合作的氣氛。 這將增加新興的集成設計流程的可能性。</p><br />Assignment1 << <a href='Assignment1.html'>Previous</a> </div>
+        
+    <!-- footer -->
+      <div class="container">
+        <div class="row pt-3 mx-auto">
+            <p>
+            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+            Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank" >Colorlib</a>
+            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+            </p>
+        </div>
+      </div>
+    <!-- for footer -->
+    
+        </div> <!-- for site wrap -->
+            <!-- <script src="../cmsimde/static/chimper/js/jquery-3.3.1.min.js"></script> -->
+            <script src="../cmsimde/static/chimper/js/jquery-migrate-3.0.1.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/jquery-ui.js"></script>
+            <script src="../cmsimde/static/chimper/js/popper.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/bootstrap.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/owl.carousel.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/jquery.stellar.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/jquery.countdown.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/jquery.magnific-popup.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/bootstrap-datepicker.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/aos.js"></script>
+            <!--
+            <script src="../cmsimde/static/chimper/js/typed.js"></script>
+                    <script>
+                    var typed = new Typed('.typed-words', {
+                    strings: ["Web Apps"," WordPress"," Mobile Apps"],
+                    typeSpeed: 80,
+                    backSpeed: 80,
+                    backDelay: 4000,
+                    startDelay: 1000,
+                    loop: true,
+                    showCursor: true
+                    });
+                    </script>
+            -->
+            <script src="../cmsimde/static/chimper/js/main.js"></script>
+        </body></html>
+        
