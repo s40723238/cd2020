@@ -75,6 +75,8 @@ EXIT</pre>
 <pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false">pip install flask bs4 lxml pelican markdown flask_cors leo</pre>
 <p>這樣就完成可攜系統的更新了</p>
 <h1>分組作業</h1>
+<p><a href="https://s40723238.github.io/cd2020/content/Assignment1.html">assignment1</a></p>
+<p><a href="https://s40723238.github.io/cd2020/content/Assignment2.html">assignment2</a></p>
 <h2>Assignment1</h2>
 <p>what do you need to know from <a href="http://www.coppeliarobotics.com/helpFiles/index.html" rel="nofollow">http://www.coppeliarobotics.com/helpFiles/index.html</a> <span>to implement a four-wheeled robot?</span></p>
 <p><a href="https://www.coppeliarobotics.com/helpFiles/index.html">泡泡龍跟線走</a></p>
@@ -214,3 +216,154 @@ end</pre>
 <p>現有的產品開發環境使工程設計人員趨於保守。消費電子領域的大多數開發項目都是緊迫的。公司通常會在計劃中設定產品發布日。因此，設計人員將按照時間軸執行所有任務和事件。根據訪談數據，參與此類項目的工程設計師傾向於拒絕工業設計師提出的新穎設計概念，因為他們認為他們無法確保其概念的工作能夠在選定的時間內通過性能和可靠性測試 。測試失敗將直接影響公司的產品開發路線圖以及工程設計師評估時的年度績效。</p>
 <p>這似乎使他們保守地選擇和評估設計概念。因此，對於直接參與按時間順序進入市場的項目的設計師來說，此過程幾乎不可用。相反，例如，從時間表到市場相對寬鬆的工程師設計人員，那些參與為未來產品開發先進技術的人員，將對新穎的設計理念更加開放。此外，更重要的是，似乎更願意與其他專家合作進行設計的設計師傾向於執行此過程。</p>
 <p>對於<span>D</span>公司，採用這種工藝的新產品在<span>Type 4</span>方面取得了巨大的市場成功。 但是，在我們的採訪中沒有報告更多將這一過程積極應用於後續項目的案例。 儘管如此，有趣的是<span>D</span>公司還是從先進技術開發團隊派遣了幾名工程設計師到工業設計團隊的相鄰辦公室。 這啟用了協同處理案例。 高層管理人員故意讓他們動手，以使他們立即為工業設計師提供必要的技術支持，以防止工業設計師提出不切實際的設計概念。 這似乎激發了雙方更加親密，從而營造了合作的氣氛。 這將增加新興的集成設計流程的可能性。</p>
+<h2>Assignment3</h2>
+<p>範例一<span>:</span>使馬達每轉的脈衝數透過正交增加。</p>
+<p>負載是一小磁盤，要對它的位置進行速度控制，磁盤的直徑等於0.06 m，質量等於0.050 Kg。</p>
+<p><img alt="" height="383" src="/images/0512-1.png" width="506"/></p>
+<p><span>L293D: </span>雙<span> H </span>橋直流馬達驅動<span> IC</span></p>
+<p>dsPIC30F4011:某種晶片</p>
+<p><span>voltage regulator:</span>穩壓器</p>
+<p><img alt="" height="171" src="/images/0512-2.png" width="194"/></p>
+<p>於第一實驗求得增益<span>k</span>，然後使用該增益來計算可用於計算恆定時間τ的穩態值。</p>
+<p>要設計一個控制器，我們要指定其功能。</p>
+<p>對於瞬態，我們希望負載的穩定時間小於<span>5%</span>或等於<span>3</span>τ<span>/ 5</span>，而過衝則小於或等於<span>5</span>％。</p>
+<p>也可以直接在離散時間內進行所有設計。 在本示例的其餘部分中，我們將選擇此方法。</p>
+<p><img alt="" height="664" src="/images/0512-3.png" width="526"/></p>
+<p>根據系統傳遞函數的表達式以及所需的性能，我們至少需要一個比例積分器（<span>PI</span>）控制器。該控制器的傳遞函數由下式給出：</p>
+<p><img alt="" height="56" src="/images/0512-4.png" width="134"/></p>
+<p>其中<span>KP</span>和<span>KI</span>是要確定的數值，以迫使負載具有我們施加的性能。</p>
+<p>使用零階保持 (Zero-order hold)和Z -transform表，我們得到：</p>
+<p><img alt="" height="131" src="/images/0512-5.png" width="243"/></p>
+<p>對於控制器，使用梯形離散化，我們得到：</p>
+<p><img alt="" height="102" src="/images/0512-6.png" width="269"/></p>
+<p>將分子和分母除以<span>z</span>並回到時間，我們得到：</p>
+<p><img alt="" height="45" src="/images/0512-7.png" width="433"/></p>
+<p>結合執行器及其負載和控制器之一的傳遞函數，我們得到以下閉環傳遞函數：<img alt="" height="68" src="/images/0512-8.png" width="596"/></p>
+<p>現在使用期望的性能，很容易得出結論，主導極點是</p>
+<p><img alt="" height="52" src="/images/0512-9.png" width="215"/></p>
+<p>其中ζ和ω<span>n</span>分別代表我們系統控制閉環的阻尼比和固有頻率。 根據控制理論，眾所周知，過衝<span>d</span>％和<span>5</span>％的建立時間<span>ts</span>由下式給出：</p>
+<p><img alt="" height="87" src="/images/0512-10.png" width="149"/></p>
+<p>使用我們的表演和這些表達，我們得出以下結論：</p>
+<p><img alt="" height="80" src="/images/0512-11.png" width="213"/></p>
+<p>它具有以下主要優勢：</p>
+<p><span>s1,2 = −78.2216 ± 78.2452 j</span></p>
+<p>使用<span>Z</span>等於<span>e</span>的<span>ts</span>次方並使用<span>t=</span>τ<span>/10=0.0064</span>，我們在<span>Z</span>域中獲得以下主導極點：</p>
+<p><span>z1,2 = 0.5317 ± 0.2910 j</span></p>
+<p>對於這些極點，我們具有以下特徵方程式：</p>
+<p><img alt="" height="47" src="/images/0512-12.png" width="367"/></p>
+<p>現在使用極點代入，我們得到：</p>
+<p><span>1 + C(z)G(z) = Δd</span></p>
+<p>這意味著：</p>
+<p><img alt="" height="116" src="/images/0512-13.png" width="166"/></p>
+<p>使用<span>K</span>，<span>T</span>和τ的值，我們得到增益<span>KP</span>和<span>KI</span>的以下表達式：</p>
+<p><span>KP = 0.1480</span></p>
+<p><span>KI = 10.1951</span></p>
+<p>備註<span>11.2.1</span>在這種情況下，必須謹慎，因為我們不在乎傳遞函數零的位置，因此在實現此控制器時可能會有些意外。 顯然，我們將獲得的性能（穩定時間和超調）將取決於零的位置。有關此問題的更多詳細信息，請向讀者介紹<span>Boukas</span></p>
+<p>為了實現此<span>PI</span>控制算法並確保所需的性能，我們將使用<span>Microship1</span>的微控制器。 這種選擇是由於我們在此類微控制器方面的經驗所致。 讀者可以記住，其他製造商的其他任何微控制器都可以做些小改動。 在本示例中，我們將使用<span>Microhip</span>的單片機<span>dsPIC30F4011</span>。</p>
+<p>我們實現的代碼使用<span>C</span>語言編寫。 採用這種語言是因為其簡單性。 該實現具有以下結構：</p>
+<pre class="brush:csharp;auto-links:false;toolbar:false" contenteditable="false">//
+// Put here the include
+//
+#include "p30F4011.h" // proc specific header
+// Define a struct
+//
+typedef struct {
+// PI Gains
+float K_P; // Propotional gain
+float K_I; // Integral gain
+//
+// PI Constants
+//
+float Const1_pid; // KP + T KI/2
+float Const2_pid; // -KP + T KI/2
+float Reference; // speed reference
+//
+// System variables
+//
+float y_k; // y_m[k] -&gt; measured output at time k
+float u_k; // u[k] -&gt; output at time k
+float e_k; // e[k] -&gt; error at time k
+//
+// System past variables
+//
+float u_prec; // u[k-1] -&gt; output at time k-1
+float e_prec; // e[k-1] -&gt; error at time k-1
+}PIStruct;
+PIStruct thePI;
+thePI.Const1= thePI.K_P+T*thePI.K_I/2;
+thePI.Const2=-thePI.K_P+T*thePI.K_I/2;
+thePI.Reference=600;
+//
+// Functions
+//
+float ReadSpeed(void);
+float ComputeControl(void);
+float SendControl(void);
+//
+// Interrupt program here using Timer 1 (overflow of counter Timer 1)
+//
+void __ISR _T1Interrupt(void) // interrupt routine code
+{
+// Interrupt Service Routine code goes here
+float Position_error;
+//
+// Read speed
+//
+thePI.y_m=ReadSpeed();
+thePI.e_k= thePI.Reference-thePI.y_m;
+//
+// Compute the control
+//
+ComputeContrl();
+//
+// Send control
+//
+SendControl();
+IFS0bits.T1IF=0; // Disable the interrupt
+}
+int main ( void ) // start of main application code
+{
+// Application code goes here
+int i;
+// Initialize the variables Reference and ThePID.y_m (it can be read
+from inputs) Reference = 0x8000; // Hexadecimal number
+(0b... Binary number) ThePID = 0x8000;
+// Initialize the registers
+TRISC=0x9fff; // RC13 and RC14 (pins 15 and 16) are configured as outputs
+IEC0bits.T1IE=1; // Enable the interrupt on Timer 1
+// Indefinite loop
+while (1)
+{
+}
+return 0
+}
+% ReadSpeed function
+int ReadSpeed (void)
+{
+}
+% ComputeControl function
+int ComputeControl (void)
+{
+thePI.u_k=thePI.u_prec+thePI.Const1*thePI.e_k+thePI.Const2*thePI.e_prec;
+}
+% SendControl function
+int Send Control (void)
+{
+sendControl()
+//
+// Update past data
+//
+thePI.u_prec=thePI.u_k;
+ThePI.e_prec=thePI.e_k;
+}
+</pre>
+<p>從該結構可以看出，首先我們注意到系統將進入循環，並在每次中斷時調用函數：</p>
+<ul>
+<li><span> ReadSpeed;</span></li>
+<li><span> ComputeControl;</span></li>
+<li><span> SendControl;</span></li>
+</ul>
+<p>並採取適當的措施。</p>
+<p><span>ReadSpeed</span>函數在每個採樣時間返回加載速度，該速度將由<span>ComputeControl</span>函數使用。<span> SendControl</span>功能通過<span>L293D</span>芯片將適當的電壓發送到執行器。</p>
+<p>使用編譯器<span>HighTec C</span>獲取十六進制代碼，並使用<span>PicKit-2</span>將文件上傳到微控制器的內存中。 有關如何獲取十六進制代碼的更多詳細信息，我們邀請讀者閱讀編譯器<span>HighTec C</span>或<span>Microchip</span>的編譯器<span>C30</span>的手冊。</p>
+<p>但是這種情況是不實用的</p>
