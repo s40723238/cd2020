@@ -367,3 +367,11 @@ ThePI.e_prec=thePI.e_k;
 <p><span>ReadSpeed</span>函數在每個採樣時間返回加載速度，該速度將由<span>ComputeControl</span>函數使用。<span> SendControl</span>功能通過<span>L293D</span>芯片將適當的電壓發送到執行器。</p>
 <p>使用編譯器<span>HighTec C</span>獲取十六進制代碼，並使用<span>PicKit-2</span>將文件上傳到微控制器的內存中。 有關如何獲取十六進制代碼的更多詳細信息，我們邀請讀者閱讀編譯器<span>HighTec C</span>或<span>Microchip</span>的編譯器<span>C30</span>的手冊。</p>
 <p>但是這種情況是不實用的</p>
+<p><span>Position Control of the dc Motor Kit</span></p>
+<p>我們專注於負載位置控制。 遵循與上一節中開發的負載速度控制類似的步驟，我們首先需要選擇我們希望系統具有的理想性能。 進行以下表演：</p>
+<p>系統穩定在閉環狀態；</p>
+<p>建立時間<span>ts</span>為<span>2</span>％等於我們可以擁有的最佳時間</p>
+<p><span>Overshoot(</span>過衝<span>)</span>等於<span>5</span>％</p>
+<p>穩態<span> (Steady state)</span>等於<span>0</span>在功能輸入時</p>
+<p>使用性能和傳遞函數，很容易得出結論，比例控制器<span>KP</span>足以滿足這些性能。</p>
+<p>在此示例中，我們將使用連續時間方法進行控制器的設計。 在上一章的基礎上，我們的系統模型如下：</p>
