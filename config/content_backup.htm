@@ -74,7 +74,24 @@ EXIT</pre>
 <pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false">python get-pip.py</pre>
 <pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false">pip install flask bs4 lxml pelican markdown flask_cors leo</pre>
 <p>這樣就完成可攜系統的更新了</p>
-<h1>分組作業</h1>
+<p>w11</p>
+<p>1.進入<a href="http://mde.tw/cd2020pj1/content/CMS.html">cd2020pj1</a></p>
+<p>2.進入<a href="https://console.developers.google.com">google的api設定網址</a>並登入gm帳號</p>
+<p>3.點選建立專案</p>
+<p><img alt="" height="338" src="/images/ZoomIt64_bpqLSNy2H0.png" width="600"/></p>
+<p>4.git clone <a href="https://github.com/mdecourse/cd2020pj1.git">https://github.com/mdecourse/cd2020pj1.git</a></p>
+<p>5.點選api服務再點<span>Google+ Domains API建立</span></p>
+<p><span><img alt="" height="338" src="/images/ZoomIt64_XCO1GnCkYZ.png" width="600"/></span></p>
+<p><span>6.點憑證<strong></strong><strong></strong>並建立憑證，建立後將用戶端id跟用戶端密碼複製到記事本並存在倉儲資料夾外</span></p>
+<p><span>7.設定第一個url:<a href="https://localhost:8443">https://localhost:8443</a>，第二個url:<a href="https://localhost:8443/login/google/按儲存">https://localhost:8443/login/google/按儲存</a></span></p>
+<p><span><img alt="" height="338" src="/images/ZoomIt64_cDUqRX9a0g.png" width="600"/></span></p>
+<p><span>8.開啟leo，打開cd2020pj1.leo，在@path ./@edit coonfig.py找到第7行key file =...將上下兩個都改成自己剛剛儲存憑證密碼的檔案名稱</span></p>
+<p><span><img alt="" height="338" src="/images/ZoomIt64_PguLAGXxC6.png" width="600"/></span></p>
+<p><span>9.在小黑窗打pip install authomatic</span></p>
+<p><span>10.進入cd2020pj1打python wsgi.py就能開啟近端，畫面長這樣</span></p>
+<p><span></span></p>
+<p><span></span></p>
+<p><span> </span></p><h1>分組作業</h1>
 <p><a href="https://s40723238.github.io/cd2020/content/Assignment1.html">assignment1</a></p>
 <p><a href="https://s40723238.github.io/cd2020/content/Assignment2.html">assignment2</a></p>
 <h2>Assignment1</h2>
@@ -375,3 +392,151 @@ ThePI.e_prec=thePI.e_k;
 <p>穩態<span> (Steady state)</span>等於<span>0</span>在功能輸入時</p>
 <p>使用性能和傳遞函數，很容易得出結論，比例控制器<span>KP</span>足以滿足這些性能。</p>
 <p>在此示例中，我們將使用連續時間方法進行控制器的設計。 在上一章的基礎上，我們的系統模型如下：</p>
+<p><img alt="" height="48" src="/images/0513-1.png" width="132"/></p>
+<p>其中<span>K</span>和τ取與速度控制相同的值。 讓傳輸控制器由以下方式給出：</p>
+<p><span>C(s) = KP</span></p>
+<p>使用這些表達式，閉環傳遞函數由下式給出：</p>
+<p><img alt="" height="102" src="/images/0513-2.png" width="173"/></p>
+<p>由於系統類型為<span>1</span>，因此使用比例控制器輸入的階躍函數的誤差等於零。</p>
+<p>根據規範，得出以下複雜的極點：</p>
+<p><img alt="" height="39" src="/images/0513-3.png" width="208"/></p>
+<p>將完成這項工作，相應的特徵方程式如下：</p>
+<p><img alt="" height="31" src="/images/0513-4.png" width="163"/></p>
+<p>與閉環系統之一等效，我們得到：</p>
+<p><img alt="" height="92" src="/images/0513-5.png" width="130"/></p>
+<p>為了確定最佳穩定時間<span>ts</span>為<span>2</span>％，請注意，我們有：</p>
+<p><span>Ts = 4/</span>ζ<span>wn</span></p>
+<p>現在是</p>
+<p>ζ<span>Wn = 1/2τ</span></p>
+<p>我們獲得：</p>
+<p>因此，使用此控制器可以在％<span>2</span>處獲得的最佳建立時間是系統恆定時間的<span>8</span>倍。 小於可獲得的任何值。 實際上，如果我們在改變<span>KP</span>時關注閉環系統的根源，這是微不足道的。 這由下圖給出。 為了固定控制器的增益，所需極點<span>s1,2 = -7.5</span>±<span>j</span>，我們使用該圖並選擇一個ζ<span>= 0.707</span>。 得出<span>KP = 0.1471</span>。</p>
+<p><span> </span><img alt="" height="462" src="/images/0513-6.png" width="527"/></p>
+<p>使用該控制器，幅度等於<span>30</span>度的階躍函數的時間響應由下表示，從中我們可以得出結論，所設計的控制器以％<span>2</span>的穩定時間等於<span>0.5115 s</span>滿足了所有期望的性能。 但是，如果我們實現此控制器，則實際情況將與仿真有所不同，因為變速箱的齒隙並未包含在所使用的模型中，因此實時結果將有所不同，誤差永遠不會為零。 為了克服這個問題，我們可以使用比例和微分控制器，它可以在％<span>2</span>處提供更好的建立時間。 讓該控制器的傳遞函數由下式給出：</p>
+<p><span>C(s) = KP + KD s</span></p>
+<p>備註11.3.1必須注意，比例和微分控制器的使用將在閉環傳遞中引入零，如果放置得當，則可以縮短建立時間。 根據其位置，過沖和建立時間將受到影響。 有關此問題的更多詳細信息</p>
+<p><img alt="" height="441" src="/images/0513-7.png" width="516"/></p>
+<p>使用該控制器，閉環傳遞函數由下式給出：</p>
+<p><img alt="" height="92" src="/images/0513-8.png" width="130"/></p>
+<p>在這種情況下，我們有兩個未知變量<span>KP</span>和<span>KD</span>以及兩個唯一確定增益的代數方程。 它們的表達式如下：</p>
+<p><img alt="" height="90" src="/images/0513-9.png" width="115"/></p>
+<p>現在，使用期望的性能，我們得出與之前類似的結論，即等於等於<span>30</span>度的幅度階躍函數的輸入的穩態誤差等於零，並且與過衝等於％<span>5</span>的阻尼比ζ等於<span> 0.707</span>。 我們可以將其固定為系統時間常數的一部分的穩定時間<span>ts</span>在％<span>2</span>處給出：</p>
+<p><img alt="" height="49" src="/images/0513-10.png" width="90"/></p>
+<p>現在，如果將穩定時間固定為<span>3</span>τ，我們將得到：</p>
+<p><span>Wn = 29.4985</span></p>
+<p>使用這些值，我們可以得到以下控制器增益值：</p>
+<p><span>Kp = 1.1374</span></p>
+<p><span>Kd = 0.0545.</span></p>
+<p>它給出了以下複雜的極點：</p>
+<p><span>s1,2 = −28.6763 ± 6.9163 j.</span></p>
+<p>零為：</p>
+<p><span>z = −20.8618.</span></p>
+<p>使用該控制器，幅度等於<span>30</span>度的輸入的時間響應如圖<span>11.5</span>所示。 從該圖可以看出，過沖和建立時間少於使用比例控制器獲得的過沖和建立時間。</p>
+<p>要實現比例控制器或比例控制器和微分控制器，我們需要獲得控制律的遞推方程。 為此，我們需要使用前面介紹的不同方法離散化控制器的傳遞函數。</p>
+<p>讓我們使用梯形方法替換<span>s</span>成<span>2/t*z-1/z+1</span>，這給出了<span>:</span></p>
+<p><span>C</span>（<span>z</span>）<span>= Kp</span>對於比例控制器</p>
+<p><span>C(z) = KP + KD 2/t*z-1/z+1</span>用於比例和微分控制器</p>
+<p>如果我們通過控制分別表示<span>u</span>（<span>k</span>）和<span>e</span>（<span>k</span>）以及在瞬時<span>kT</span>處參考和輸出之間的誤差，我們將得到以下表達式：</p>
+<p><span>1.</span>比例</p>
+<p><img alt="" height="49" src="/images/0513-11.png" width="199"/></p>
+<p><img alt="" height="507" src="/images/0513-12.png" width="582"/></p>
+<p>2.用於比例和微分控制器</p>
+<p><img alt="" height="93" src="/images/0513-13.png" width="729"/></p>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Main program %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+main
+% Data
+% Variables
+% While loop
+while (1)
+do
+ReadSpeed;
+ComputeControl;
+SendControl;
+end;
+% ReadSpeed function
+% ComputeControl function
+% SendControl function
+</pre>
+<p>現在讓我們使用此示例的狀態空間表示，並設計一個狀態反饋控制器，以保證所需的性能。 對於這種情況，我們將首先假設完全訪問狀態，其次通過假設我們只能訪問該職位來放寬此假設。 像我們之前所做的那樣，我們可以連續進行，也可以不連續進行。</p>
+<p>先前我們建立了該系統的狀態空間描述，其描述為：</p>
+<p><img alt="" height="108" src="/images/0513-14.png" width="375"/></p>
+<p>其中<span>x</span>（<span>t</span>）∈<span>R2</span>（<span>x1</span>（<span>t</span>）<span>=θ</span>（<span>t</span>）和<span>x2</span>（<span>t</span>）<span>=θ̇</span>（<span>t</span>）），<span>u</span>（<span>t</span>）∈<span>R</span>（施加電壓）。</p>
+<p>從穩定時間為％<span>2</span>等於<span>3</span>τ的期望性能中，我們得到與以前相同的主導極點，因此具有相同的特性方程式，</p>
+<p><img alt="" height="45" src="/images/0513-15.png" width="703"/></p>
+<p>使用控制器表達式，閉環特性方程由下式給出：</p>
+<p><span>det (sI − A + BK) = 0</span></p>
+<p>通過均衡這兩個方程式，我們可以得到以下收益：</p>
+<p><span>K1 = 1.1146</span></p>
+<p><span>K2 = 0.0326</span></p>
+<p>使用該控制器，幅度等於<span>30</span>度的輸入的時間響應如下圖<span>11-6</span>所示。 從該圖可以看出，超調和建立時間就是我們想要的。 重要的是要注意穩態狀態下錯誤的存在。 如果在循環中添加一個積分動作，則可以消除此錯誤。</p>
+<p>對於第二種情況，由於我們無法獲得負載速度，因此我們可以從位置計算負載速度，也可以使用觀察者來估算系統狀態。 如前所述，我們用於觀察者設計的極點應該比控制器設計中使用的極點更快。</p>
+<p>選擇以下極點（s1,2，為控制器設計中所用實數的四倍）：</p>
+<p><img alt="" height="115" src="/images/0513-16.png" width="379"/></p>
+<p><img alt="" height="478" src="/images/0513-17.png" width="553"/></p>
+<p>根據觀察<span>:</span></p>
+<p><span>L1 = 151.2</span></p>
+<p><span>L2 = 5029.4</span></p>
+<p>控制器的增益與對狀態向量的完全情況相同。</p>
+<p>在下面的<span>Matlab</span>中，我們同時提供控制器和觀察者的設計，並進行仿真，以顯示系統和觀察者的狀態相對於時間的行為。</p>
+<p><span>clear all</span></p>
+<p><span>%data</span></p>
+<p><span>tau=0.064</span></p>
+<p><span>k=48.9</span></p>
+<p><span>A = [0 1;0 -1/tau];</span></p>
+<p><span>B = [0 ; k/tau];</span></p>
+<p><span>C = [1 0];</span></p>
+<p><span>D = 0;</span></p>
+<p><span>% controller design</span></p>
+<p><span>K = acker(A,B,[-3+3*j -3-3*j]);</span></p>
+<p><span>L = acker(A’,C’,[-12+3*j -12-3*j])’;</span></p>
+<p><span>% Simualation data</span></p>
+<p><span>Ts = 0.01;</span></p>
+<p><span>x0 = [1 ; 1];</span></p>
+<p><span>z0 = [1.1 ; 0.9];</span></p>
+<p><span>Tf = 2; %final time</span></p>
+<p><span>%augmented system</span></p>
+<p><span>Ah = [A -B*K;</span></p>
+<p><span>L*C A-B*K-L*C];</span></p>
+<p><span>Bh = zeros(size(Ah,1),1);</span></p>
+<p><span>Ch = [C D*K];</span></p>
+<p><span>Dh = zeros(size(Ch,1),1);</span></p>
+<p><span>xh0 = [x0 ; z0];</span></p>
+<p><span>t=0:Ts:Tf;</span></p>
+<p><span>u = zeros(size(t));</span></p>
+<p><span>m = ss(Ah,Bh,Ch,Dh);</span></p>
+<p><span>%simulation</span></p>
+<p><span>[y,t,x] = lsim(m,u,t,xh0);</span></p>
+<p><span>%plotting</span></p>
+<p><span>figure;</span></p>
+<p><span>plot(t,y);</span></p>
+<p><span>title(’Output’);</span></p>
+<p><span>xlabel(’Time in sec’)</span></p>
+<p><span>ylabel(’Output’)</span></p>
+<p><span>grid</span></p>
+<p><span>figure;</span></p>
+<p><span>plot(t,x(:,1:size(A,1)));</span></p>
+<p><span>title(’States of the system’);</span></p>
+<p><span>xlabel(’Time in sec’)</span></p>
+<p><span>ylabel(’System states’)</span></p>
+<p><span>grid</span></p>
+<p><span>figure;</span></p>
+<p><span>plot(t,x(:,size(A,1)+1:end));</span></p>
+<p><span>title(’states of the observer’);</span></p>
+<p><span>xlabel(’Time in sec’)</span></p>
+<p><span>ylabel(’Observer states’)</span></p>
+<p>grid</p>
+<p><img alt="" height="456" src="/images/0513-18.png" width="528"/></p>
+<p>我們還可以使用線性二次調節器設計狀態反饋控制器。 實際上，如果我們為成本函數選擇以下矩陣：</p>
+<p><img alt="" height="105" src="/images/0513-19.png" width="143"/></p>
+<p>使用這些矩陣和<span>Matlab</span>函數<span>lqr</span>，我們得到：</p>
+<p><span>K = [0.3162 0.6875]</span></p>
+<p>我們還可以使用魯棒控制部分的結果設計狀態反饋控制器。 由於系統沒有不確定性，也沒有外部干擾，所以我們可以為名義動態設計一個狀態反饋控制器。 使用系統數據和<span>Maltlab</span>，我們得到：</p>
+<p><img alt="" height="118" src="/images/0513-20.png" width="265"/></p>
+<p><img alt="" height="526" src="/images/0513-21.png" width="585"/></p>
+<p>給出了相應的控制器增益：</p>
+<p><span>K =[−0.0017 0.0193 ]</span></p>
+<p>備註11.3.3由於我們有直流電動機套件的連續時間模型，因此我們用它來設計控制器增益。 在這種情況下，我們解決了以下LMI：</p>
+<p><img alt="" height="46" src="/images/0513-22.png" width="289"/></p>
+<p>增益<span>K</span>由下式給出：</p>
+<p><img alt="" height="39" src="/images/0513-23.png" width="106"/></p>
