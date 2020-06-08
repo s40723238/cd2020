@@ -115,6 +115,14 @@ EXIT</pre>
 <p>筆記:</p>
 <p>虛擬主機都要使用vi指令編輯，因虛擬主機裡無法複製貼上故要下載共享文件<a href="https://portableapps.com/search/node/filezilla">filezilla</a>，解壓縮後建立站台跟虛擬主機連線就可以共享文件了。</p>
 <p>ipv4遠端控制</p>
+<p>1.cmd打開小黑窗打ipconfig查自己ipv4的位址</p>
+<p>2.將自己主機的前三個埠號改成自己的ip，打開ubuntu</p>
+<p>3.開啟lxtermial，putty</p>
+<p>4.putty/connection/ssh/x11打勾enable x11 fowarding跟輸入localhost:0.0之後open就能連線到虛擬主機</p>
+<p>5.帳密都為kmol2020，輸入xterm&amp;打開小白窗</p>
+<p>6.進入cd2020pj1先git pull查看有無新版本，在cd docs/cmsimde</p>
+<p>7.輸入vi wsgi.py，i編輯並將host:改成10.0.2.4在按esc退出:wq儲存</p>
+<p>8.輸入python3 wsgi.py啟動，網址是https://自己的ipv4:17443</p>
 <p><iframe allowfullscreen="allowfullscreen" height="314" src="//www.youtube.com/embed/wEkhr-qztFY" width="560"></iframe></p>
 <p>問題1:</p>
 <p>用putty開啟的小白窗是連接到虛擬主機的，不是連接自己的電腦。</p>
