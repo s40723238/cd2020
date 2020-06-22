@@ -79,8 +79,7 @@ EXIT</pre>
 <p><iframe allowfullscreen="allowfullscreen" height="314" src="//www.youtube.com/embed/a69tNWKmC64" width="560"></iframe></p>
 <p>w8</p>
 <p>開會紀錄</p>
-<p><iframe allowfullscreen="allowfullscreen" height="314" src="//www.youtube.com/embed/EVC9ZV_4RG0" width="560"></iframe></p>
-<h1>week10~17</h1>
+<p><iframe allowfullscreen="allowfullscreen" height="314" src="//www.youtube.com/embed/EVC9ZV_4RG0" width="560"></iframe></p><h1>week10~17</h1>
 <p>w10</p>
 <p>開會紀錄</p>
 <p><iframe allowfullscreen="allowfullscreen" height="314" src="//www.youtube.com/embed/GmKxlNPx-gs" width="560"></iframe></p>
@@ -158,7 +157,42 @@ EXIT</pre>
 <p>4.開啟putty，如影片設定後open後帳號密碼輸入kmol2020再輸入xterm&amp;開啟小白窗</p>
 <p>5.如上個影片開啟coppeliasim後按模擬</p>
 <p>6.下載<a href="https://drive.google.com/file/d/1KlnsgBFyp6OpCC_BlYH-jKL4uJixpoBl/view">老師的檔案</a>(登入gm帳號)後將其中的car_model.py拉到編譯器按tool/go啟動模擬</p>
-<p><iframe allowfullscreen="allowfullscreen" height="314" src="//www.youtube.com/embed/9Nnk_ExGfhU" width="560"></iframe></p><h1>分組作業</h1>
+<p><iframe allowfullscreen="allowfullscreen" height="314" src="//www.youtube.com/embed/9Nnk_ExGfhU" width="560"></iframe></p>
+<p>ipv6遠端伺服控制</p>
+<p>1.將控制台設定跟<a href="https://github.com/mdecourse/cd2020/blob/master/downloads/w13_ipv6_assignment.txt">老師</a>一樣</p>
+<p>2.將虛擬主機全域埠號改成跟影片一樣</p>
+<p>3.啟動ubuntu並開啟xterminal然後新cd tmp/cd2020pj1打git pull看有無更新</p>
+<p>4.cd docs/cmsimde打sudo vi wsgi.py並打密碼kmol2020將host改成自己ipv6位址</p>
+<p>5.打開lxlaunch跟putty，putty要名稱設定跟自己的位址一樣</p>
+<p>6.open後輸入帳密kmol2020打xterm&amp;打開小白窗</p>
+<p>7.cd tmp/cd2020pj1/docs/cmsimde打python3 wsgi.py</p>
+<p>8.網址是https://[自己的ipv6位址]:17443</p>
+<p><iframe allowfullscreen="allowfullscreen" height="314" src="//www.youtube.com/embed/S7i_bW3FaZw" width="560"></iframe></p>
+<p>w16</p>
+<p>ipv6對外連線</p>
+<p>1.打開ipv6的內容把位址改成2001:288:6004:17:2020:2:0:7238</p>
+<p></p>
+<p>2.cd /etc/，cd apt/apt.conf.d，輸入sudo vi proxy.conf 密碼是kmol2020</p>
+<p>3.進去後按i輸入Acquire::http::Proxy "http://[2001:288:6004:17::53]:3128"; 打完後esc打:wq儲存</p>
+<p>4.sudo apt install net-tools</p>
+<p>5.cd /etc/,cd netplan打sudo vi 00-installer-config</p>
+<p>6.將版面調整成</p>
+<pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false">network:
+    ethernets:
+        enp0s3:
+           dhcp4: true
+           dhcp6: true
+           nameservers:
+               addresses:
+                  - 2001:b000:168::11  
+  version: 2</pre>
+<p>排版要完全一致</p>
+<p>7.輸入ping6 2001:288:6004:17::254測試</p>
+<p>8.將埠號輸入好</p>
+<p>9.cd tmp 在打sudo vi oauth_scrum.txt，內容可以隨便打</p>
+<p>10.cd tmp/cd2020pj1 sudo wsgi.py把host改成跟埠號一樣</p>
+<p>11.輸入python3 wsgi.py</p>
+<p>12.網址是https://[自己的ipv6]:3128</p><h1>分組作業</h1>
 <p><a href="https://s40723238.github.io/cd2020/content/Assignment1.html">assignment1</a></p>
 <p><a href="https://s40723238.github.io/cd2020/content/Assignment2.html">assignment2</a></p>
 <p><a href="https://s40723238.github.io/cd2020/content/Assignment3.html">assignment2</a></p>

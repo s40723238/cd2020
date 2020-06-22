@@ -79,8 +79,7 @@ EXIT</pre>
 <p><iframe allowfullscreen="allowfullscreen" height="314" src="//www.youtube.com/embed/a69tNWKmC64" width="560"></iframe></p>
 <p>w8</p>
 <p>開會紀錄</p>
-<p><iframe allowfullscreen="allowfullscreen" height="314" src="//www.youtube.com/embed/EVC9ZV_4RG0" width="560"></iframe></p>
-<h1>week10~17</h1>
+<p><iframe allowfullscreen="allowfullscreen" height="314" src="//www.youtube.com/embed/EVC9ZV_4RG0" width="560"></iframe></p><h1>week10~17</h1>
 <p>w10</p>
 <p>開會紀錄</p>
 <p><iframe allowfullscreen="allowfullscreen" height="314" src="//www.youtube.com/embed/GmKxlNPx-gs" width="560"></iframe></p>
@@ -168,7 +167,35 @@ EXIT</pre>
 <p>6.open後輸入帳密kmol2020打xterm&amp;打開小白窗</p>
 <p>7.cd tmp/cd2020pj1/docs/cmsimde打python3 wsgi.py</p>
 <p>8.網址是https://[自己的ipv6位址]:17443</p>
-<p><iframe allowfullscreen="allowfullscreen" height="314" src="//www.youtube.com/embed/S7i_bW3FaZw" width="560"></iframe></p><h1>分組作業</h1>
+<p><iframe allowfullscreen="allowfullscreen" height="314" src="//www.youtube.com/embed/S7i_bW3FaZw" width="560"></iframe></p>
+<p>w16</p>
+<p>ipv6對外連線</p>
+<p>1.打開ipv6的內容把位址改成2001:288:6004:17:2020:2:0:7238</p>
+<p></p>
+<p>2.cd /etc/，cd apt/apt.conf.d，輸入sudo vi proxy.conf 密碼是kmol2020</p>
+<p>3.進去後按i輸入Acquire::http::Proxy "http://[2001:288:6004:17::53]:3128"; 打完後esc打:wq儲存</p>
+<p>4.sudo apt install net-tools</p>
+<p>5.cd /etc/,cd netplan打sudo vi 00-installer-config</p>
+<p>6.將版面調整成</p>
+<pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false">network:
+    ethernets:
+        enp0s3:
+           dhcp4: true
+           dhcp6: true
+           nameservers:
+               addresses:
+                  - 2001:b000:168::11  
+  version: 2</pre>
+<p>排版要完全一致</p>
+<p>7.輸入ping6 2001:288:6004:17::254測試</p>
+<p>8.將埠號輸入好</p>
+<p>9.cd tmp 在打sudo vi oauth_scrum.txt，內容可以隨便打</p>
+<p>10.cd tmp/cd2020pj1 sudo wsgi.py把host改成跟埠號一樣</p>
+<p>11.輸入python3 wsgi.py</p>
+<p>12.網址是https://[自己的ipv6]:3128</p>
+<p>w17</p>
+<p>ipv6連線個人倉儲</p>
+<p><iframe allowfullscreen="allowfullscreen" height="314" src="//www.youtube.com/embed/P3cXKxGhVL8" width="560"></iframe></p><h1>分組作業</h1>
 <p><a href="https://s40723238.github.io/cd2020/content/Assignment1.html">assignment1</a></p>
 <p><a href="https://s40723238.github.io/cd2020/content/Assignment2.html">assignment2</a></p>
 <p><a href="https://s40723238.github.io/cd2020/content/Assignment3.html">assignment2</a></p>
