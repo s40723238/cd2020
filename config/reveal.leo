@@ -160,7 +160,7 @@ What do you need to know from http://www.coppeliarobotics.com/helpFiles/index.ht
 
 						
 </t>
-<t tx="game49369.20200701044046.2"># 第八周
+<t tx="game49369.20200701044046.2"># 第十五周
 [虛擬主機啟動coppliasim](https://www.youtube.com/watch?v=29GrcDX4NAQ)
 
 [小車模擬](https://www.youtube.com/watch?v=9Nnk_ExGfhU)
@@ -175,7 +175,7 @@ What do you need to know from http://www.coppeliarobotics.com/helpFiles/index.ht
 
 						
 </t>
-<t tx="game49369.20200701044048.2"># 第八周
+<t tx="game49369.20200701044048.2"># 第十周
 [w10開會紀錄](https://www.youtube.com/watch?v=GmKxlNPx-gs)
 
 </t>
@@ -188,7 +188,7 @@ What do you need to know from http://www.coppeliarobotics.com/helpFiles/index.ht
 
 						
 </t>
-<t tx="game49369.20200701044051.2"># 第八周
+<t tx="game49369.20200701044051.2"># 第十一周
 [w11開會直播](https://www.youtube.com/watch?v=NjWnIy4vX1g)
 
 使用google api</t>
@@ -201,7 +201,7 @@ What do you need to know from http://www.coppeliarobotics.com/helpFiles/index.ht
 
 						
 </t>
-<t tx="game49369.20200701044055.2"># 第八周
+<t tx="game49369.20200701044055.2"># 第十三周
 [w13開會直播](https://www.youtube.com/watch?v=CLbEVpAV7gs)
 
 [ipv4設定](https://www.youtube.com/watch?v=wEkhr-qztFY)</t>
@@ -214,7 +214,7 @@ What do you need to know from http://www.coppeliarobotics.com/helpFiles/index.ht
 
 						
 </t>
-<t tx="game49369.20200701044058.2"># 第八周
+<t tx="game49369.20200701044058.2"># 第十二周
 [w12開會直播](https://www.youtube.com/watch?v=is_sLTLHV5M)
 
 </t>
@@ -227,7 +227,7 @@ What do you need to know from http://www.coppeliarobotics.com/helpFiles/index.ht
 
 						
 </t>
-<t tx="game49369.20200701044107.2"># 第八周
+<t tx="game49369.20200701044107.2"># 第十六周
 [ipv6連線個人倉儲](https://www.youtube.com/watch?v=P3cXKxGhVL8)
 
 </t>
@@ -240,7 +240,7 @@ What do you need to know from http://www.coppeliarobotics.com/helpFiles/index.ht
 
 						
 </t>
-<t tx="game49369.20200701044111.2"># 第八周
+<t tx="game49369.20200701044111.2"># 第十四周
 [w14開會直播](https://www.youtube.com/watch?v=N6jCSwv2eI0)
 
 </t>
@@ -253,7 +253,7 @@ What do you need to know from http://www.coppeliarobotics.com/helpFiles/index.ht
 
 						
 </t>
-<t tx="game49369.20200701044431.2"># 第八周
+<t tx="game49369.20200701044431.2"># 第十七周
 [期末報告](https://www.youtube.com/watch?v=FQJqfJAgYgE&amp;feature=emb_title)
 
 </t>
