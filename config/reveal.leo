@@ -39,6 +39,30 @@
 <v t="game49369.20200430122743.1"><vh>第八周</vh>
 <v t="game49369.20200430122743.2"><vh>投影片快捷鍵</vh></v>
 </v>
+<v t="game49369.20200701044048.1"><vh>第十周</vh>
+<v t="game49369.20200701044048.2"><vh>投影片快捷鍵</vh></v>
+</v>
+<v t="game49369.20200701044051.1"><vh>第十一周</vh>
+<v t="game49369.20200701044051.2"><vh>投影片快捷鍵</vh></v>
+</v>
+<v t="game49369.20200701044058.1"><vh>第十二周</vh>
+<v t="game49369.20200701044058.2"><vh>投影片快捷鍵</vh></v>
+</v>
+<v t="game49369.20200701044055.1"><vh>第十三周</vh>
+<v t="game49369.20200701044055.2"><vh>投影片快捷鍵</vh></v>
+</v>
+<v t="game49369.20200701044111.1"><vh>第十四周</vh>
+<v t="game49369.20200701044111.2"><vh>投影片快捷鍵</vh></v>
+</v>
+<v t="game49369.20200701044046.1"><vh>第十五周</vh>
+<v t="game49369.20200701044046.2"><vh>投影片快捷鍵</vh></v>
+</v>
+<v t="game49369.20200701044107.1"><vh>第十六周</vh>
+<v t="game49369.20200701044107.2"><vh>投影片快捷鍵</vh></v>
+</v>
+<v t="game49369.20200701044431.1"><vh>第十七周</vh>
+<v t="game49369.20200701044431.2"><vh>投影片快捷鍵</vh></v>
+</v>
 <v t="leo.20180902120523.13"><vh>各式內容引用範例</vh>
 <v t="leo.20180902120523.14"><vh>導入數學符號與方程式</vh>
 <v t="leo.20180902120523.15"><vh>LaTeX 格式方程式</vh></v>
@@ -83,7 +107,9 @@ week2
 </t>
 <t tx="game49369.20200430120928.2"># 第三周
 [分工](https://www.youtube.com/watch?v=r0AABAp474U&amp;feature=emb_title)
-我負責CoppeliaSim的第三個toturial</t>
+我負責CoppeliaSim的第三個toturial
+
+</t>
 <t tx="game49369.20200430120935.1">&lt;section data-markdown&gt;
     &lt;script type="text/template"&gt;
 @others
@@ -95,7 +121,9 @@ week2
 </t>
 <t tx="game49369.20200430120935.2"># 第四周
 What do you need to know from http://www.coppeliarobotics.com/helpFiles/index.html to implement a four-wheeled robot?
-[翻譯](https://s40723238.github.io/cd2020/content/Assignment1.html)</t>
+[翻譯](https://s40723238.github.io/cd2020/content/Assignment1.html)
+
+</t>
 <t tx="game49369.20200430122741.1">&lt;section data-markdown&gt;
     &lt;script type="text/template"&gt;
 @others
@@ -107,7 +135,9 @@ What do you need to know from http://www.coppeliarobotics.com/helpFiles/index.ht
 </t>
 <t tx="game49369.20200430122741.2"># 第七周
 [工作分配](https://www.youtube.com/watch?v=EVC9ZV_4RG0&amp;feature=emb_title)
-我負責18~24頁</t>
+我負責18~24頁
+
+</t>
 <t tx="game49369.20200430122743.1">&lt;section data-markdown&gt;
     &lt;script type="text/template"&gt;
 @others
@@ -118,7 +148,115 @@ What do you need to know from http://www.coppeliarobotics.com/helpFiles/index.ht
 						
 </t>
 <t tx="game49369.20200430122743.2"># 第八周
-[我翻譯的部分](https://s40723238.github.io/cd2020/content/Assignment2.html)</t>
+[我翻譯的部分](https://s40723238.github.io/cd2020/content/Assignment2.html)
+
+</t>
+<t tx="game49369.20200701044046.1">&lt;section data-markdown&gt;
+    &lt;script type="text/template"&gt;
+@others
+    &lt;/script&gt;
+&lt;/section&gt;
+
+
+						
+</t>
+<t tx="game49369.20200701044046.2"># 第八周
+[虛擬主機啟動coppliasim](https://www.youtube.com/watch?v=29GrcDX4NAQ)
+
+[小車模擬](https://www.youtube.com/watch?v=9Nnk_ExGfhU)
+
+[ipv6遠端伺服控制](https://www.youtube.com/watch?v=S7i_bW3FaZw)</t>
+<t tx="game49369.20200701044048.1">&lt;section data-markdown&gt;
+    &lt;script type="text/template"&gt;
+@others
+    &lt;/script&gt;
+&lt;/section&gt;
+
+
+						
+</t>
+<t tx="game49369.20200701044048.2"># 第八周
+[w10開會紀錄](https://www.youtube.com/watch?v=GmKxlNPx-gs)
+
+</t>
+<t tx="game49369.20200701044051.1">&lt;section data-markdown&gt;
+    &lt;script type="text/template"&gt;
+@others
+    &lt;/script&gt;
+&lt;/section&gt;
+
+
+						
+</t>
+<t tx="game49369.20200701044051.2"># 第八周
+[w11開會直播](https://www.youtube.com/watch?v=NjWnIy4vX1g)
+
+使用google api</t>
+<t tx="game49369.20200701044055.1">&lt;section data-markdown&gt;
+    &lt;script type="text/template"&gt;
+@others
+    &lt;/script&gt;
+&lt;/section&gt;
+
+
+						
+</t>
+<t tx="game49369.20200701044055.2"># 第八周
+[w13開會直播](https://www.youtube.com/watch?v=CLbEVpAV7gs)
+
+[ipv4設定](https://www.youtube.com/watch?v=wEkhr-qztFY)</t>
+<t tx="game49369.20200701044058.1">&lt;section data-markdown&gt;
+    &lt;script type="text/template"&gt;
+@others
+    &lt;/script&gt;
+&lt;/section&gt;
+
+
+						
+</t>
+<t tx="game49369.20200701044058.2"># 第八周
+[w12開會直播](https://www.youtube.com/watch?v=is_sLTLHV5M)
+
+</t>
+<t tx="game49369.20200701044107.1">&lt;section data-markdown&gt;
+    &lt;script type="text/template"&gt;
+@others
+    &lt;/script&gt;
+&lt;/section&gt;
+
+
+						
+</t>
+<t tx="game49369.20200701044107.2"># 第八周
+[ipv6連線個人倉儲](https://www.youtube.com/watch?v=P3cXKxGhVL8)
+
+</t>
+<t tx="game49369.20200701044111.1">&lt;section data-markdown&gt;
+    &lt;script type="text/template"&gt;
+@others
+    &lt;/script&gt;
+&lt;/section&gt;
+
+
+						
+</t>
+<t tx="game49369.20200701044111.2"># 第八周
+[w14開會直播](https://www.youtube.com/watch?v=N6jCSwv2eI0)
+
+</t>
+<t tx="game49369.20200701044431.1">&lt;section data-markdown&gt;
+    &lt;script type="text/template"&gt;
+@others
+    &lt;/script&gt;
+&lt;/section&gt;
+
+
+						
+</t>
+<t tx="game49369.20200701044431.2"># 第八周
+[期末報告](https://www.youtube.com/watch?v=FQJqfJAgYgE&amp;feature=emb_title)
+
+</t>
 <t tx="leo.20180902120523.1"></t>
 <t tx="leo.20180902120523.10">## cd2020
 
@@ -144,12 +282,16 @@ Created by [S40723238](https://s40723238.github.io/cd2020/content/index.html)
 <t tx="leo.20180902120523.12"># 第一周
 創建倉儲
 1.在自己的guthub上新增倉儲
+
 2.將自己倉儲設定底下的github page將sourse改成master branch
-3.git clone自己的倉儲
-4.在cd2020打git submodule add https://github.com/mdecourse/cmsimde.git 取得
-cmsimde的資料夾
-5.在cmsimde/up_dir複製所有資料貼到cd2020底下
-6.回到cd2020並add/commit/push打自己的帳號密碼就完成創建網站了</t>
+
+3.git clone --recurse-submodules "自己的倉儲.git"取得cmsimde裡面的文件
+
+4.在cmsimde/up_dir複製所有資料貼到cd2020底下
+
+5.回到cd2020並add/commit/push打自己的帳號密碼就完成創建網站了
+
+</t>
 <t tx="leo.20180902120523.13">&lt;section&gt;
 @others
 &lt;/section&gt;

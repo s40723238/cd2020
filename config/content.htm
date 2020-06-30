@@ -3,11 +3,9 @@
 <p>創建倉儲</p>
 <p>1.在自己的guthub上新增倉儲</p>
 <p>2.將自己倉儲設定底下的github page將sourse改成master branch</p>
-<p>3.git clone自己的倉儲</p>
-<p>4.在cd2020打git submodule add <a href="https://github.com/mdecourse/cmsimde.git取得">https://github.com/mdecourse/cmsimde.git</a> 取得</p>
-<p>cmsimde的資料夾</p>
-<p>5.在cmsimde/up_dir複製所有資料貼到cd2020底下</p>
-<p>6.回到cd2020並add/commit/push打自己的帳號密碼就完成創建網站了</p>
+<p>3.<span>git clone --recurse-submodules "自己的倉儲.git"取得cmsimde裡面的文件</span></p>
+<p>4.在cmsimde/up_dir複製所有資料貼到cd2020底下</p>
+<p>5.回到cd2020並add/commit/push打自己的帳號密碼就完成創建網站了</p>
 <p>week2</p>
 <p>更新可攜系統</p>
 <p>1.在隨身碟創建data的資料夾</p>
@@ -74,6 +72,11 @@ EXIT</pre>
 <pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false">python get-pip.py</pre>
 <pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false">pip install flask bs4 lxml pelican markdown flask_cors leo</pre>
 <p>這樣就完成可攜系統的更新了</p>
+<p>ffmpeg</p>
+<p>加字幕</p>
+<p>ffmpeg -i 原影片.mp4 -vf subtitles=字幕.srt output.mp4</p>
+<p>加浮水印</p>
+<p>ffmpeg -i 原影片.mp4 -i 浮水印.png -filter_complex "overlay=5:950" output.mp4</p>
 <p>w6</p>
 <p>開會紀錄</p>
 <p><iframe allowfullscreen="allowfullscreen" height="314" src="//www.youtube.com/embed/a69tNWKmC64" width="560"></iframe></p>
@@ -197,7 +200,8 @@ EXIT</pre>
 <p>ipv6連線個人倉儲</p>
 <p><iframe allowfullscreen="allowfullscreen" height="314" src="//www.youtube.com/embed/P3cXKxGhVL8" width="560"></iframe></p>
 <p>期末報告影片</p>
-<p><iframe allowfullscreen="allowfullscreen" height="314" src="//www.youtube.com/embed/FQJqfJAgYgE" width="560"></iframe></p><h1>分組作業</h1>
+<p><iframe allowfullscreen="allowfullscreen" height="314" src="//www.youtube.com/embed/FQJqfJAgYgE" width="560"></iframe></p>
+<h1>分組作業</h1>
 <p><a href="https://s40723238.github.io/cd2020/content/Assignment1.html">assignment1</a></p>
 <p><a href="https://s40723238.github.io/cd2020/content/Assignment2.html">assignment2</a></p>
 <p><a href="https://s40723238.github.io/cd2020/content/Assignment3.html">assignment2</a></p>
